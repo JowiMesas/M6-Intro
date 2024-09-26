@@ -7,11 +7,23 @@
     <script src="exemple.js" defer></script>
 </head>
 <body>
+
+    <br>
+    <audio controls id="audio">
+        <source src="DRUMC0.WAV" type="audio/wav">
+    </audio>
+    <button onclick="playAudio()">PLAY </button>
+    <button onclick="playAudio2()"> PLAY NEXT</button>
+    <br> <br>
     <div id="div_text"></div>
     <div id="resultat"></div>
+    <br>
     Numero <input id="input_numero" value="99" />
+    Numero 2 <input id="input_numero2"/>
     <button onclick="
     sumaValors();
     "> CLICK</button>
+    <br>
+    <div id="llista_propietats"></div>
 </body>
 </html>

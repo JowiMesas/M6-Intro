@@ -39,14 +39,18 @@ c. Amplada interna de la finestra
 d. Títol de la web
 e. Hora actual
    */
-  let data = new Date();
-  let llista =  document.getElementById("llista_propietats");
-  llista.innerHTML = `<ol> <li> Valor minim 
-  que pot tenir un numero JS: ` +Number.MIN_VALUE + `</li>
-  <li> Amplada total de la pantalla `+ screen.width+` </li>
-  <li> Amplada interna de la finestra: `+window.innerWidth+` </li>
-  <li> Titol de la web: `+document.title+`</li>
-  <li> Hora Actual: `+ data.getHours()+` : `+ data.getMinutes() + `:
-  / `+data.getSeconds()+ ` segons </li>
-  </ol>`;
+  window.setInterval(mostraLlista, 1000)
+  function mostraLlista() {
+    let data = new Date();
+    let llista =  document.getElementById("llista_propietats");
+    llista.innerHTML = `<ol> <li> Valor minim 
+    que pot tenir un numero JS: ` +Number.MIN_VALUE + `</li>
+    <li> Amplada total de la pantalla `+ screen.width+` </li>
+    <li> Amplada interna de la finestra: `+window.innerWidth+` </li>
+    <li> Titol de la web: `+document.title+`</li>
+    <li> Hora Actual: `+ data.getHours()+` : `+ data.getMinutes() + `:
+    / `+data.getSeconds()+ ` segons </li>
+    </ol>`;
+  }
+
 

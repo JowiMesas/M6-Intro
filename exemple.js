@@ -22,9 +22,26 @@ let numero = input_numero.value
   }
 
   let audio = document.getElementById("audio");
+  const timer = document.getElementById("timer");
+  const timer_span = document.getElementById("timer_span");
+
   function playAudio() {
     audio.src = "DRUMC0.WAV";
     audio.play();
+    setTimeout(function(){
+      timer.max = audio.duration;
+      timer_span.max = audio.duration;
+       let ref_interval = window.setInterval(
+        function () {
+        timer.value = audio.currentTime;
+        timer_span.innerText = audio.currentTime;
+        if(audio.currentTime == audio.duration) {
+          window.clearInterval(ref_interval);
+        }
+      }, 1000
+    );
+    },200);
+   
   }
   function playAudio2() {
     audio.src = "FANFARE1.WAV";
@@ -56,6 +73,12 @@ let numero = input_numero.value
   function change_inp_vol() {
     audio.volume = document.getElementById("vol").value;
   }
+  window.setTimeout(
+    function () {
+    document.getElementById("timer_span").innerText = audio.duration;
+  }, 500
+)
+
   /**
    * Crea un document HTML amb un div amb id “llista_propietats”. Programa amb JS que es creï una
 llista amb els següents missatges i amb els valors obtinguts dinàmicament:

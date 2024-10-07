@@ -68,3 +68,41 @@ function restablecer() {
     alarma.currentTime = 0;
     pausado = false;s
 }
+/**
+ * Reloj
+ */
+
+const reloj = document.getElementById('reloj');
+const tiempoAlarmaInput = document.getElementById('tiempoAlarma');
+const audioAlarma = document.getElementById('audioAlarma');
+ let tiempoAlarma = null;
+ let alarmaSonando = false; //Controlamos si suena la alarma  o no
+window.setInterval(actualizarReloj, 1000);
+ function actualizarReloj() {
+    let  actualizado = new Date();
+    reloj.textContent = actualizado.getHours() + `:`
+     + actualizado.getMinutes() + `:` + actualizado.getSeconds();
+
+     if (tiempoAlarma === actualizado.getHours()+ `:` + actualizado.getMinutes()) {
+        audioAlarma.play();
+        alarmaSonando = true;
+     }
+ }
+ function setAlarm() {
+    tiempoAlarma = tiempoAlarmaInput.value;
+    alarmaSonando = false;
+ }
+
+ function cambiarMusica() {
+    audioAlarma.src = document.getElementById('seleccionarMusica').value;
+    audioAlarma.load();
+ }
+ function playMusica() {
+    audioAlarma.play();
+ }
+ function detenerMusica() {
+    audioAlarma.pause();
+    audioAlarma.currentTime=0;
+    alarmaSonando = false;
+ }
+

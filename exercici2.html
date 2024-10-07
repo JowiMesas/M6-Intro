@@ -30,5 +30,17 @@
 
     <br> <br>
     <h2>Rellotge</h2>
+    <div id="reloj">00:00:00</div>
+    <br>
+    <br>
+    <h3>Establecer Alarma</h3>
+    <input type="time" id="tiempoAlarma">
+    <button onclick="setAlarm()"> Establecer alarma</button>
+    <br>
+    <h3>Música de Alarma</h3>
+    <select id="seleccionarMusica" onchange="cambiarMusica()">
+        <option value="DRUMC0.WAV">Música 1</option>
+        <option value="FANFARE1.WAV">Música 2</option>
+    </select>
 </body>
 </html>

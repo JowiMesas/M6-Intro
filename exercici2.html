@@ -15,14 +15,20 @@
 <body>
     <div id="taula_propietats"></div>
     <br>
-    <form action="">
+        <h2>Compte enrere</h2>
         Minuts:
-        <input type="number" value="00">
+        <input type="number" id="minutos" value="00">
         <br>
-        segons:
-        <input type="number" value="00">
-        <br>
-        <button id="play" >PLAY</button>
-    </form>
+        Segons:
+        <input type="number" id="segundos" value="00">
+        <br> <br>
+        <button onclick="iniciar()">INICIAR </button>
+        <button onclick="pausar()" >PAUSAR </button>
+        <button onclick="restablecer()">RESTABLECER</button>
+        <audio id="alarma" src="DRUMC0.WAV"></audio>
+    <p id="time"></p>
+
+    <br> <br>
+    <h2>Rellotge</h2>
 </body>
 </html>
